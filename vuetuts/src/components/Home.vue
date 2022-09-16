@@ -1,11 +1,10 @@
 <template>
     <ol>
-      <h3>two way binding</h3>
-      <input type="text" v-model="count">
-      <p>{{count}}</p>
-
-      <input type="number" v-model="Numberss">
-      <h2>{{Numberss}}</h2>
+      <h3>get input field value</h3>
+      <input v-model="email" type="text">
+      <br>
+      <input v-model="password" type="text"><br>
+      <button v-on:click="getData" type="button">get values</button>
     </ol>
 </template>
 <script>
@@ -13,15 +12,19 @@
         name:'home',
       data(){
         return{
-            count: 10,
-            Numberss:123456789
+            email:null,
+            password:null
+        }
+      },
+      methods:{
+        getData(){
+       console.log(this.email, this.password)
         }
       }
     }
     </script>
     <style scoped>
-        span{
-            background-color: blue;
-            color: white;
+        h3{
+            color: rgb(82, 37, 243);
         }
     </style>
