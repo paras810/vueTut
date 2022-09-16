@@ -1,30 +1,13 @@
 <template>
     <ol>
-      <h3>get checkbox & radio button value</h3>
-      <label for="java">Java</label>
-      <input type="checkbox" value="java" id="java" v-model="tech">
-      <label for="php">Php</label>
-      <input type="checkbox" value="php" id="php" v-model="tech">
-      <label for="vue">Vue</label>
-      <input type="checkbox" value="vue" id="vue" v-model="tech">
-
-      <p>{{tech}}</p>
-<br>
-      <h2>For check box</h2>
-      <h4>What is your age:</h4>
-      <label for="age1">0-20</label>
-      <input type="radio" name="age" id="age1" value="0-20" v-model="age">
-
-      <label for="age2">20-40</label>
-      <input type="radio" name="age" id="age2" value="20-40" v-model="age">
-
-      <label for="age1">40-60</label>
-      <input type="radio" name="age" id="age3" value="40-60" v-model="age">
-
-      <label for="age4">60-80</label>
-      <input type="radio" name="age" id="age4" value="60-80"  v-model="age">
-<br>
-<p>{{age}}</p>
+      <h3>If Else Conditions</h3>
+      <h1 v-if="!conditions">not vue</h1>
+      <!-- <h1 v-if="!conditions">Good Night</h1> -->
+      <h1 v-else="!conditions">vue</h1>
+        <!-- <button class="con" v-on:click="toggle">hello everyone 😍</button> -->
+        <!-- more easy way to toggle -->
+        <button class="con" v-on:click="conditions=!conditions">hello everyone 😍</button>
+       
     </ol>
 </template>
 <script>
@@ -32,13 +15,13 @@
         name:'home',
       data(){
         return{
-            tech:[],
-            age:null
+          //  conditions:false
+           conditions:true
         }
       },
       methods:{
-        getData(){
-       console.log(this.email, this.password)
+        toggle(){
+          this.conditions = !this.conditions
         }
       }
     }
@@ -49,5 +32,12 @@
         }
         label{
             margin: 0 .5rem;
+        }
+        .con{
+          color: white;
+          background-color: blue;
+          padding: .5rem 1rem;
+          border-radius: .3rem;
+          border: none;
         }
     </style>
