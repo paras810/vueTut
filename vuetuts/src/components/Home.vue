@@ -1,51 +1,22 @@
-
-
 <template>
     <ol>
-        <span v-on:mousemove="test('mouse move')" >Home</span>
-        <li>email {{email}}</li>
-        <li>type {{gen('asus')}} </li>
-        <li>intro {{getData().name}}</li>
-        <li>intro {{getData().email}}</li>
-        <li>newMobile {{getData().newMobile}}</li>
+      <h3>two way binding</h3>
+      <input type="text" v-model="count">
+      <p>{{count}}</p>
 
-        <!-- event -->
-        <button v-on:click="test(`  clicked by me`)" >click event</button>
-        <button v-on:dblclick="test(`  double clicked by me`)" >double click event</button>
-        <button v-on:click="plus">count {{count}}</button>
+      <input type="number" v-model="Numberss">
+      <h2>{{Numberss}}</h2>
     </ol>
 </template>
 <script>
     export default{ 
         name:'home',
-        data(){
-            return{
-                email:'example@gmail.comm',
-                mobile: '10001',
-               count: 10
-            }
-        },
-        methods: {
-            plus(){
-                this.count = this.count + 1
-            }
-            ,
-            gen(model){
-                    return  model
-                    
-                },
-                getData(){
-                    return{
-                        name:'paras',
-                        email:this.email,
-                        newMobile:this.mobile
-                    }
-                },
-                test(data){
-                    return alert(data)
-                }
-        },
-
+      data(){
+        return{
+            count: 10,
+            Numberss:123456789
+        }
+      }
     }
     </script>
     <style scoped>
