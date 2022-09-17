@@ -1,33 +1,25 @@
 <template>
-      <h3>pass data parent to child component</h3>
-      <Child name='Paras' :obj="obj" :getData='getData'/>
-      <ol>
-      </ol>
-</template>
-<script >
-import Child from './child.vue'
-    export default{
-    name: "home",
-    components: {
-       Child,
+      <h2>Html Binding</h2>
+      <h4>{{stringg}}</h4>
+      <div v-html="tag"></div>
+      <div v-html="tag2"></div>
       
-      },
+</template>
 
-    data() {
-        return {
-          obj:{name:'paras',email:'paras@gmail.com'}
-        };
-    },
-
-    methods:{
-      getData(){
-        alert('parent function called')
-      }
+<script >
+    export default{
+   data(){
+    return{
+    stringg:'new user entered',
+    tag:`<h6>this is a heading </h6>`,
+    tag2:`<li>List </li>`,
     }
+   }
+
 }
     </script>
     <style scoped>
-        h3{
+        h2{
             color: rgb(82, 37, 243);
         }
     </style>
