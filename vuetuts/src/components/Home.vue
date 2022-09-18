@@ -1,19 +1,17 @@
 <template>
-      <h2>form modifiers</h2>
-      <!-- <input type="text" v-model.lazy="data"> -->
-      <input type="number" v-model.number.lazy="data">
-    <h3>Data : {{typeof (data)}}</h3>
-    <h3>Data : {{data}}</h3>
+      <h2>non-props data</h2>
+      <User data='some data' xyz="user-cmp"/>
 </template>
 
 <script >
+import User from "./User.vue";
 export default{
-    data(){
-        return{
-        data:''
-        }
+    data() {
+        return {
+           
+        };
     },
-
+    components: { User }
 }
 
     </script>
@@ -21,7 +19,5 @@ export default{
         h2{
             color: rgb(82, 37, 243);
         }
-        label{
-            margin: .5rem 1rem;
-        }
+       
     </style>  
