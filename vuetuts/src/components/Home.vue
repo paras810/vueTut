@@ -1,22 +1,25 @@
 <template>
       <h2>props with example</h2>
-      <!-- <Students name='Paras'/> -->
-      <Students :name='newName'/>
-      <Teacher name="Unknown" />
+      <h4>{{childUser}}</h4>
+      <User :getuser='getUserName'/>
       
 </template>
 
 <script >
-import Students from './students.vue';
-import Teacher from './Teacher.vue';
+import User from "./User.vue";
     export default{
-      data(){
-        return{
-          newName:'Mohan'
-        }
-      },
-    components: { Students, Teacher },
-   
+    data() {
+        return {
+          childUser:''
+        };
+    },
+    components: { User },
+    methods:{
+      getUserName(zname){
+      this.childUser = zname
+      }
+    },
+    
 }
     </script>
     <style scoped>
