@@ -1,26 +1,29 @@
 <template>
-      <h2>props with example</h2>
-      <h4>{{childUser}}</h4>
-      <User :getuser='getUserName'/>
-      
+      <h2>Ref</h2>
+      <input type="text" ref="input">
+      <button @click="getData">Click</button>
 </template>
 
 <script >
-import User from "./User.vue";
-    export default{
-    data() {
-        return {
-          childUser:''
-        };
+export default{
+    data(){
+        return{
+
+        }
     },
-    components: { User },
     methods:{
-      getUserName(zname){
-      this.childUser = zname
-      }
-    },
-    
+        getData(){
+            // alert('clicked')
+            this.$refs.input.focus()
+            let val = this.$refs.input.value
+             val = this.$refs.input.style.color = 'blue'
+             val = this.$refs.input.style.padding = '2rem'
+
+            console.log(val)
+        }
+    }
 }
+
     </script>
     <style scoped>
         h2{
