@@ -1,17 +1,32 @@
 <template>
-      <h2>non-props data</h2>
-      <User data='some data' xyz="user-cmp"/>
+      <h2>Computed property</h2>
+      <h4>{{(dollars*rupeeVal)-dis}}</h4>
+      <h4>{{calDis2}}</h4>
+      <h4>{{calDis()}}</h4>
 </template>
 
 <script >
-import User from "./User.vue";
 export default{
     data() {
         return {
-           
-        };
+           dollars:100,
+           rupeeVal:70,
+           dis:10,
+        }
     },
-    components: { User }
+    methods:{
+        calDis(){
+          let res=  (this.dollars*this.rupeeVal)-this.dis
+          return res
+        }
+    },
+ computed:{
+    calDis2(){
+        let res2 = (this.dollars*this.rupeeVal)-this.dis
+        return res2
+    }
+ }
+
 }
 
     </script>
