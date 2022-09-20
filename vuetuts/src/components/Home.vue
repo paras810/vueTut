@@ -1,31 +1,33 @@
 <template>
       <h2>Computed property</h2>
-      <h4>{{(dollars*rupeeVal)-dis}}</h4>
-      <h4>{{calDis2}}</h4>
-      <h4>{{calDis()}}</h4>
+      <h4>{{count}}</h4>
+      <button @click="count= count+1">+</button>
+      <button @click="count=count-1">-</button>
+
 </template>
 
 <script >
 export default{
     data() {
         return {
-           dollars:100,
-           rupeeVal:70,
-           dis:10,
+          count:0
         }
     },
-    methods:{
-        calDis(){
-          let res=  (this.dollars*this.rupeeVal)-this.dis
-          return res
+    watch:{
+        count(currentVal,prevVal){
+            // alert('counter changed')
+            // console.log('counter value changed')
+            console.log(currentVal,prevVal)
+            if (currentVal <0) {
+                // alert('counter value is greater than 5')
+                this.count = 0
+            }
+            if(prevVal ===10){
+             console.log('old value is 10')
+            }
+    
         }
-    },
- computed:{
-    calDis2(){
-        let res2 = (this.dollars*this.rupeeVal)-this.dis
-        return res2
     }
- }
 
 }
 
