@@ -1,37 +1,65 @@
 <template>
-      <h2>Slots</h2>
-      <!-- <User name='Vue'/>
-      <User name='php'/>
-      <User name='node'/> -->
+<h2>Name Slots</h2>
 
-      <User><h1>vue tut</h1></User><br>
-      <User><a href="#">vue tut</a></User><br>
-      <User> <img src="images.jpg" alt=""></User><br>
-      <!-- slot default value -->
-      <User></User>
+<User>
+    <template v-slot:header>
+        <h3 >Car</h3>
+    </template>
 
-      <!-- in react we use this.props.children -->
+    <template v-slot:content>
+        <p >Model : 1931</p>
+    </template>
+
+    <template v-slot:paras>
+         <button >Buy now</button>
+    </template>
+</User>
+
+<User>
+    <template v-slot:header>
+        <h3 >Car</h3>
+    </template>
+
+    <template v-slot:content>
+        <p >Model : 1931</p>
+    </template>
+
+    <template v-slot:paras>
+         <button >Buy now</button>
+    </template>
+</User>
+
+<User>
+    <template v-slot:header>
+        <h3 >Car</h3>
+    </template>
+
+    <template v-slot:content>
+        <p >Model : 1931</p>
+    </template>
+
+    <template v-slot:paras>
+    </template>
+</User>
 </template>
 
-<script >
-    import User from './User.vue'
-export default{
+<script>
+import User from './User.vue'
+export default {
     data() {
         return {
 
         }
     },
-    components:{
+    components: {
         User
     }
-   
 
 }
+</script>
 
-    </script>
-    <style >
-        h2{
-            color: rgb(82, 37, 243);
-        }
-       
-    </style>  
+<style>
+h2 {
+    color: rgb(82, 37, 243);
+}
+</style>

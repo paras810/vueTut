@@ -1,23 +1,41 @@
 <template >
-<!-- <slot></slot> -->
 
-<!-- setting default Value -->
-<!-- <slot>Slot</slot> -->
-<slot><h6>Slot</h6></slot>
+    <div class="box">
 
+        <div>
+            <slot name="header"></slot>
+        </div>
 
+        <div>
+            <slot name="content"></slot>
+        </div>
 
-<!-- this is just for fun -->
-<!-- <Child><h6>another slot</h6></Child>
-<Child><h1>another slot</h1></Child>
-<Child><img src="img.jpg" alt="jpg"></Child> -->
+        <div>
+            <slot name="paras">
+                <button>Click me</button>
+            </slot>
+        </div>
 
+    </div>
 </template> 
 
 <script>
-// import Child from "./child.vue";
-    export default {
-    // components: { Child }
-};
+export default {
+}
 
 </script>  
+<style >
+    .box{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 2px solid red;
+    padding: 1rem 0;
+    box-shadow: 7px 9px 13px -6px black;
+    width: 25vw;
+    margin: 2rem auto;
+    border-radius: 14px;
+    }
+</style>
