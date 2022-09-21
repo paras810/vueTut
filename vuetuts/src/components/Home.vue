@@ -1,19 +1,23 @@
 <template>
-<h2>Teleport Component</h2>
-<teleport to="#footer">
-    <Footer/>
-</teleport>
+<h2>BeforeCreated and created {{name}}</h2>
 </template>
 
 <script>
-    import Footer from './Footer.vue'
 export default {
     data() {
         return {
-
+         name:'paras'
         }
     },
-    components:{ Footer }
+    beforeCreate(){
+        alert('beforCreate')
+        this.name = 'before paras'
+    },
+    created(){
+       
+        alert('created')
+        this.name = 'Mohan'
+    }
 }
 </script>
 
