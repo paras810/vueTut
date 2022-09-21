@@ -1,5 +1,5 @@
 <template>
-<h2>BeforeCreated and created {{name}}</h2>
+<h2>BeforeMount and mount </h2>
 </template>
 
 <script>
@@ -9,15 +9,14 @@ export default {
          name:'paras'
         }
     },
-    beforeCreate(){
-        alert('beforCreate')
-        this.name = 'before paras'
-    },
-    created(){
-       
-        alert('created')
-        this.name = 'Mohan'
-    }
+  beforeMount() {
+      alert('beforMount')
+      console.log('beforeMount', this.$el)
+  },
+  mounted() {
+      alert('Mounted')
+      console.log('Mounted', this.$el)
+  },
 }
 </script>
 
