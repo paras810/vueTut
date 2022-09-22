@@ -1,16 +1,22 @@
+<template>
+  <h1>Routing</h1>
+<router-link to="/">Home</router-link><br>
+<router-link to="/login">Login</router-link><br>
+<router-link to="/Profile">Profile</router-link><br>
+    <router-view></router-view>
+    <!-- <Home/>  -->
+</template>
+
 <script setup>
-import Home from './components/Home.vue'
+
+
 </script>
 
-<template>
-  <header>
-    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
-  </header>
-
-  <main>
-    
-    <Home/> 
-  </main>
-</template>
+<style>
+  h1{
+    position: absolute;
+    top: -10rem;left: 0;
+  }
+</style>
 
 
