@@ -3,19 +3,15 @@
 <router-link to="/">Home</router-link><br>
 <router-link to="/login">Login</router-link><br>
 <router-link  to="/Profile/1">Paras Profile</router-link><br>
-<router-link   to="/Profile/2">Rohan Profile</router-link><br>
-<router-link   to="/Profile/3">Mohan Profile</router-link><br>
+<router-link to="/brokenLink">404</router-link>
     <router-view></router-view>
     <!-- <Home/>  -->
 </template>
 
 <script >
 export default {
-  data() {
-    return {
-      
-    }
-  }}
+  
+  }
 
 </script>
 
