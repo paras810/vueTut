@@ -1,24 +1,32 @@
 <template>
-  <h1>Routing</h1>
-<router-link to="/">Home</router-link><br>
-<router-link to="/login">Login</router-link><br>
-<router-link  to="/Profile/1">Paras Profile</router-link><br>
-<router-link to="/brokenLink">404</router-link>
-    <router-view></router-view>
-    <!-- <Home/>  -->
+  <h1>Call API</h1>
+<p v-for="item, index in list" :key="index">{{item.id}} --- {{item.email}}---{{item.first_name}}</p>
+
+  <!-- <a href="https://reqres.in/api/users?page=1">api</a> -->
 </template>
 
 <script >
+  import axios from 'axios'
 export default {
-  
+  data() {
+    return {
+      list:[]
+    }
+  },
+  async mounted() {
+    let result = await axios.get('https://reqres.in/api/users?page=1')
+    // console.log(result.data.data[0].email)
+    console.log('api data ',result.data.data)
+     this.list = (result.data.data)
+  },
   }
 
 </script>
 
 <style>
   h1{
-    position: absolute;
-    top: -10rem;left: 0;
+    color: rgb(80, 242, 40);
+    background-color: black;
   }
 </style>
 
