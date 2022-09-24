@@ -5,7 +5,7 @@ import Profile from './components/Profile.vue'
 
 const routes =[
     {
-        name:'',
+        name:'home',
         path:'/', 
         component: Home
     },
@@ -15,8 +15,8 @@ const routes =[
         component: Login
     },
     {
-        name:'Home',
-        path:'/profile', 
+        name:'profile',
+        path:'/profile/:name', 
         component: Profile
     },
 ]
